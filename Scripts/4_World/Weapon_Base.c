@@ -1,5 +1,5 @@
 modded class Weapon_Base {
-  protected float m_WeaponFireRate = InitFireRate();
+  protected float m_WeaponFireRate = InitFireRate()
   protected const static string WeaponProfilesFolder = "$profile:ExpansionMod\\AI\\Utils\\";
   protected const static string Weapon_Settings = WeaponProfilesFolder + "WeaponSettings.json";
   protected ref CheckWeaponGroups m_CheckWeaponGroups;
@@ -10,7 +10,7 @@ modded class Weapon_Base {
   float InitFireRate() {
     if (!m_CheckWeaponGroups) loadCheckWeaponGroups();
     foreach(CheckWeaponType group: m_CheckWeaponGroups.Group){
-        if (IsTypeOf(group.WeaponClassName)) {
+        if (IsKindOf(group.WeaponClassName)) {
             return group.WeaponFireRate;
         }
     }

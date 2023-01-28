@@ -9,10 +9,10 @@
 	      return;
 
 	    Weapon_Base weapon = Weapon_Base.Cast(GetHumanInventory().GetEntityInHands());
-	    if (!weapon)
-	      return;
+	    if (!weapon) return;
+		if (!weapon.FireRate()) weapon.InitFireRate();
 
-	    m_MinTimeTillNextFire = return GetGame().GetTime() + weapon.FireRate();
+	    m_MinTimeTillNextFire = GetGame().GetTime() + weapon.FireRate();
 
 	    if (GetDayZPlayerInventory().IsProcessing())
 	      return;
