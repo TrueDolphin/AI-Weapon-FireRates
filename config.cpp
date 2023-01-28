@@ -4,7 +4,7 @@ class CfgPatches
 {
 	class AI_Weapon_FireRates_scripts
 	{
-		requiredAddons[] = {"DZ_Data","DZ_Scripts","DayZExpansion_AI_Scripts"};
+		requiredAddons[] = {"DayZExpansion_AI_Scripts"};
 	};
 };
 class CfgMods
@@ -21,13 +21,13 @@ class CfgMods
 		version = "0.1";
 		extra = 0;
 		type = "servermod";
-		dependencies[] = {"World","Mission"};
+		dependencies[] = {"World"};
 		class defs
 		{
 			class worldScriptModule
 			{
 				value = "";
-				files[] = {"DayZExpansion/AI/Scripts/Common","DayZExpansion/AI/Scripts/4_World","dolphin/AI-Weapon-FireRates/World"};
+				files[] = {"dolphin/AI-Weapon-FireRates/Scripts/4_World"};
 			};
 		};
 	};
