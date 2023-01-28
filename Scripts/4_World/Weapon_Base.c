@@ -1,5 +1,5 @@
 modded class Weapon_Base {
-  protected float m_WeaponFireRate = InitFireRate()
+  protected float m_WeaponFireRate = InitFireRate();
   protected const static string WeaponProfilesFolder = "$profile:ExpansionMod\\AI\\Utils\\";
   protected const static string Weapon_Settings = WeaponProfilesFolder + "WeaponSettings.json";
   protected ref CheckWeaponGroups m_CheckWeaponGroups;

@@ -11,23 +11,10 @@
 	    Weapon_Base weapon = Weapon_Base.Cast(GetHumanInventory().GetEntityInHands());
 	    if (!weapon) return;
 		if (!weapon.FireRate()) weapon.InitFireRate();
-
+	    int muzzleIndex = weapon.GetCurrentMuzzle();
 	    m_MinTimeTillNextFire = GetGame().GetTime() + weapon.FireRate();
 
-	    if (GetDayZPlayerInventory().IsProcessing())
-	      return;
-	    if (!IsRaised())
-	      return;
-	    if (!weapon.CanFire())
-	      return;
-	    if (GetWeaponManager().IsRunning())
-	      return;
-
-	    int muzzleIndex = weapon.GetCurrentMuzzle();
-	    if (!weapon.CanFire(muzzleIndex))
-	      return;
-
-	    if (!eAI_HasLOS())
+	    if (GetDayZPlayerInventory().IsProcessing() || !IsRaised() || !weapon.CanFire() || GetWeaponManager().IsRunning() || !eAI_HasLOS() || !weapon.CanFire(muzzleIndex))
 	      return;
 
 	    GetWeaponManager().Fire(weapon);
